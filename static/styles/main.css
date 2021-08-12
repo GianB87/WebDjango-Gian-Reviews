@@ -1,0 +1,109 @@
+#post * {
+    font-family: 'Comfortaa', cursive;
+    color: whitesmoke;
+    margin: 0.2em 0;
+    font-size: 1.8rem;
+    text-align: justify;
+    font-weight: 300;
+    text-justify: inter-word;
+    letter-spacing: 0.05rem;
+    line-height: 2em !important;
+    text-indent: 6rem;
+
+}
+/* #post p {
+    text-transform:capitalize;
+} */
+#post ol li {
+    margin: 0;
+    text-indent: 2rem;
+    margin-left: 6rem;
+}
+li::marker {
+
+    color: #abb7c4;   
+}
+
+#post ul li {
+    list-style: circle;
+    text-indent: 2rem;
+    margin-left: 6rem;
+}
+
+#post h1 {
+    font-size: 6rem;
+  } 
+#post  h2 {
+    font-size: 5rem;
+}
+#post h3 {
+    font-size: 4.5rem;
+  }
+  
+#post  h4 {
+    font-size: 4rem !important;
+}
+#post h5 {
+    font-size: 3.5rem;
+  } 
+#post  h6 {
+    font-size: 3rem;
+    margin: 15px 0;
+}
+#post h1, #post h2, #post h3, #post h4, #post h5, #post h6 {
+    text-indent: 0;
+    text-align: center;
+
+}
+#post h1, #post h2, #post h3, #post h4, #post h5, #post h6, #post strong {
+    font-weight: bold;
+}
+
+#post blockquote {
+    position: relative;
+    left: 6rem;
+    text-indent: 0;
+}
+#post blockquote p{
+    text-indent: 1rem;   
+}
+#post pre {
+    text-indent: 0;
+    color: #abb7c4; 
+    background-color: #071829;
+    margin: 2rem 3rem;
+    padding: 1rem 4rem;
+    border-radius: 2rem;
+    border: 0.1rem solid #4280bf;
+}
+#post a span {
+    text-decoration: underline;
+    color: #4280bf; 
+    transition: color 0.5s ease;
+    font-style: italic; 
+    letter-spacing: 0.15rem;
+}
+#post a span:hover {
+    color: #dcf836;  
+    font-weight: bold;
+
+}
+#post hr {
+    border: 0.1rem solid #4280bf;
+    border-radius: 0.1rem;
+}
+
+
+
+#tags {
+    display: flex;
+    align-items: center; 
+}
+#tags span {
+ align-self: center;
+ margin: 0 0.2rem;
+ margin-top: 1.2rem;
+}
+#tags span a {
+    color: white;
+}

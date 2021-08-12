@@ -1,0 +1,247 @@
+{% extends "main.html" %}
+{% load tags %}
+{% block content %}
+<div class="sliderv2  slider ">
+	<div class="container">
+
+		<div class="row ">
+			<div class="slider-single-item">
+				{% for book in book_items %}
+				<div class="movie-item">
+					<div class="row mv-img-center">
+						<div class="col-md-2 col-sm-12 col-xs-12 ">
+							<div class="mv-img-2 ">
+								<a href="{% url 'book' book.id %}"><img src="{{book.image_link}}" alt=""></a>
+							</div>
+						</div>
+						<div class="col-md-10 col-sm-12 col-xs-12">
+							<div class="title-in">
+								<div class="cate">
+									<span class="{{book.rate|qual}}"><a href="{% url 'book' book.id %}">
+										{{ratings|get_item:book.rate }}</a></span>
+								</div>
+								<h1 id="home-style-title"><a href="{% url 'book' book.id %}">{{book.title}} <br>
+										<span>{{book.authors}}</span></a></h1>
+								<div class="social-btn"> 
+									{% if book.youtube_link %}
+									<a href="{{book.youtube_link}}" class="parent-btn"><i class="ion-play"></i>Watch
+										Video</a>
+									{% endif %}
+									<a href="#" class="parent-btn"><i class="ion-heart"></i> Add to Favorite</a>
+									<div class="hover-bnt">
+										<a href="#" class="parent-btn"><i class="ion-android-share-alt"></i>share</a>
+										<div class="hvr-item">
+											<a href="#" class="hvr-grow"><i class="ion-social-facebook"></i></a>
+											<a href="#" class="hvr-grow"><i class="ion-social-twitter"></i></a>
+											<a href="#" class="hvr-grow"><i class="ion-social-googleplus"></i></a>
+											<a href="#" class="hvr-grow"><i class="ion-social-youtube"></i></a>
+										</div>
+									</div>
+								</div>
+								<div class="mv-details">
+									<p><i class="ion-android-star"></i><span>{{book.rate}}</span> /10 <span>
+											&nbsp;&nbsp; Date of Review: {{book.review_date}}</span></p>
+								</div>
+								<div class="btn-transform transform-vertical">
+									<div><a href="{% url 'book' book.id %}" class="item item-1 redbtn">more detail</a>
+									</div>
+									<div><a href="{% url 'book' book.id %}" class="item item-2 redbtn hvrbtn">more
+											detail</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="movie-items">
+	<div class="container">
+		<div class="row ipad-width">
+			<div class="col-md-8">
+				<div class="title-hd">
+					<h2>Book Reviews</h2>
+					<a href="{% url 'books' %}" class="viewall">View All books <i class="ion-ios-arrow-right"></i></a>
+				</div>
+				<div class="tabs">
+					<ul class="tab-links">
+						<li class="active"><a href="#tab1">#Recently</a></li>
+						<li><a href="#tab2"> #Top Rated</a></li>
+						<li><a href="#tab3"> #Comming Soon </a></li>
+					</ul>
+					<div class="tab-content">
+						<div id="tab1" class="tab active">
+							<div class="row">
+								<div class="slick-multiItem">
+									{% for book in newest %}
+									<div class="slide-it">
+										<div class="movie-item">
+											<div class="mv-img">
+												<img src="{{book.image_link}}" alt="" width="185" height="284">
+											</div>
+											<div class="hvr-inner">
+												<a href="{% url 'book' book.id %}}"> Read more <i
+														class="ion-android-arrow-dropright"></i> </a>
+											</div>
+											<div class="title-in">
+												<h6><a href="{% url 'book' book.id %}}">{{ book.title }}</a></h6>
+												<p><i class="ion-android-star"></i><span>{{book.rate}}</span> /10</p>
+											</div>
+										</div>
+									</div>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+						<div id="tab2" class="tab">
+							<div class="row">
+								<div class="slick-multiItem">
+									{% for book in top_rated %}
+									<div class="slide-it">
+										<div class="movie-item">
+											<div class="mv-img">
+												<img src="{{book.image_link}}" alt="" width="185" height="284">
+											</div>
+											<div class="hvr-inner">
+												<a href="{% url 'book' book.id %}}"> Read more <i
+														class="ion-android-arrow-dropright"></i> </a>
+											</div>
+											<div class="title-in">
+												<h6><a href="{% url 'book' book.id %}}">{{ book.title }}</a></h6>
+												<p><i class="ion-android-star"></i><span>{{book.rate}}</span> /10</p>
+											</div>
+										</div>
+									</div>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+						<div id="tab3" class="tab">
+							<div class="row">
+								<div class="slick-multiItem">
+									{% for book in comming %}
+									<div class="slide-it">
+										<div class="movie-item">
+											<div class="mv-img">
+												<img src="{{book.image_link}}" alt="" width="185" height="284">
+											</div>
+											<div class="hvr-inner">
+												<a href="{% url 'book' book.id %}}"> Read more <i
+														class="ion-android-arrow-dropright"></i> </a>
+											</div>
+											<div class="title-in">
+												<h6><a href="{% url 'book' book.id %}}">{{ book.title }}</a></h6>
+												<p><i class="ion-android-star"></i><span>{{book.rate}}</span> /10</p>
+											</div>
+										</div>
+									</div>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="sidebar">
+					<div class="ads">
+						<img src="/static/images/uploads/ads1.png" alt="">
+					</div>
+
+					<div class="celebrities">
+						<h4 class="sb-title">Recent Posts</h4>
+						{% for post in newest_posts %}
+						<div class="celeb-item" style="border: 1px solid #0f2133; border-radius: 5px;">
+							<a href="{% url 'post' post.id %}"><img style="height: 70px; width: 70px;" src="{{post.imageURL}}" alt=""></a>
+							<div class="celeb-author" >
+								<h6><a href="{% url 'post' post.id %}">{{post.title}}</a></h6>
+								<hr style="margin: 5px 0;">
+								{% for tag in post.tags.all %}
+								<div style="display: inline;" class="cate">
+									<span class="blue" ><a href="#">{{ tag }}</a></span>
+								</div> 
+								{% endfor %} 
+							</div>
+						</div>						  
+						{% endfor %}
+						<a href="{% url 'blog'%}" class="btn">See all posts<i class="ion-ios-arrow-right"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="trailers">
+	<div class="container">
+		<div class="row ipad-width">
+			<div class="col-md-8 col-sm-12 col-xs-12">
+				<div class="title-hd">
+					<h2>My videos</h2>
+					<a href="#" class="viewall">View my channel <i class="ion-ios-arrow-right"></i></a>
+				</div>
+
+				<div class="video-style-2">
+					<div class="slider-for">
+						{% for link in links %}
+						<div>
+							<iframe class="item-video" src="" data-src="{{link}}"></iframe>
+						</div>
+						{% endfor %}
+					</div>
+					<div class="slider-nav">
+						{% for img in imgs %}
+						<div class="item">
+							<div class="trailer-img">
+								<img id="img" src="{{img}}" alt="video thumbnail">
+							</div>
+							<div class="trailer-infor">
+								<h4 class="desc">Wonder Woman</h4>
+								<p>2:30</p>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-12 col-xs-12">
+				<div class="sidebar">
+					<div class="searh-form">
+
+
+							<form class="form-style-1" action="#" method="GET">
+								<h4 class="sb-title">Filter By Kind of Content</h4>
+								{% csrf_token %}
+								
+								<div class="row">
+									<div class="col-md-12">
+										<input class="submit" type="submit" value="Book Reviews">
+									</div>
+								</div> <br>
+								<p class="text-center">Constantly reading books about tech, psychology, neuroscience and AI</p>
+								<h6  class="sb-title"></h6>
+								<div class="row">
+									<div class="col-md-12">
+										<input class="submit" type="submit" value="Blog Content">
+									</div>
+								</div> <br>
+								<p class="text-center">Any new idea deserve a video</p>
+								<h6  class="sb-title"></h6>
+								<div class="row">
+									<div class="col-md-12">
+										<input class="submit" type="submit" value="Work and Research">
+									</div>
+								</div> <br>
+								<p class="text-center">I like AI and studying, my homework</p>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}

@@ -1,0 +1,50 @@
+{% load tags %}
+<label>Sort by:</label>
+<form action="" method="GET">
+    {% csrf_token %}
+    <input type='hidden' type="text" placeholder="Enter keywords" value="{{search_query}}" name="search_query">
+    <select style="display:none" name='search_rate'>
+        <option value="">Select a rating</option>	
+        {% for key, value in ratings.items %}
+        {% if key == search_rate|to_int %}	
+            <option value="{{key}}" selected="selected">{{value}} - {{key}}</option>									
+        {% else %}
+        <option value="{{key}}">{{value}} - {{key}}</option>										  
+        {% endif %}										  
+        {% endfor %}
+    </select>
+    <input name="search_order" value="{{search_order}}" type="hidden">
+    <select name="search_order"  onChange="form.submit();">
+        <option disabled selected >{{search_order|order_title}}</option>
+        <option value="date_desc">Newest First</option>
+        <option value="date_asc">Oldest First</option>
+        <option value="rate_desc">High Rated First</option>
+        <option value="rate_asc">Low Rated First</option>
+        <!-- <option value="popularity">Popularity Descending</option>
+        <option value="popularity">Popularity Ascending</option> -->
+    </select>
+    <input type="submit" hidden>
+</form>
+{% if queryset.has_other_pages %}
+<div class="pagination2">
+    <span>Page {{queryset.number}} of {{num_pages}}:</span>
+    {% if queryset.has_previous %}
+    <a href="?page={{queryset.previous_page_number}}" data-page="{{queryset.previous_page_number}}"><i class="ion-arrow-left-b"></i></a>
+    {% endif %}
+    {% for page in custom_range %}
+
+    {% if page == queryset.number%}
+    <a class="active" href="?page={{page}}" data-page="{{page}}">{{page}}</a>
+    {% else %}
+    <a href="?page={{page}}" data-page="{{page}}">{{page}}</a>
+    {% endif %}
+    {% endfor %} 
+
+    {% if queryset.has_next %}
+    <a href="?page={{queryset.next_page_number}}" data-page="{{queryset.next_page_number}}"><i class="ion-arrow-right-b"></i></a>
+    {% endif %}
+</div>
+{% endif %}
+
+
+

@@ -1,0 +1,114 @@
+{% extends "main.html" %}
+{% block content %}
+<div class="hero common-hero">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="hero-ct">
+					<h1>Read is good</h1>
+					<ul class="breadcumb">
+						<li class="active"><a href="{% url 'home' %}">Home</a><span class="ion-ios-arrow-right"></span></li>
+						<li class="active"><a href="{% url 'blog' %}">Blog</a></li>
+						<li> <span class="ion-ios-arrow-right"></span>Post</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- blog detail section-->
+<div class="page-single">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<div class="blog-detail-ct">
+					<h1>{{post.title}}</h1>
+					<span class="time">{{post.created}}</span> <br>
+					<img src="{{post.imageURL}}" alt="">
+					<div class="editor" id="post"'>
+						{{post.description|safe}}
+					</div>
+					<!-- share link -->
+					<div class="flex-it share-tag">
+						<div class="social-link">
+							<h4>Share it</h4>
+							<a href="#"><i class="ion-social-facebook"></i></a>
+							<a href="#"><i class="ion-social-twitter"></i></a>
+							<a href="#"><i class="ion-social-googleplus"></i></a>
+							<a href="#"><i class="ion-social-pinterest"></i></a>
+							<a href="#"><i class="ion-social-linkedin"></i></a>
+						</div>
+						{% if post.tags.all %}						  
+						<div class="right-it">
+							<h4>Tags</h4> 
+							{% for tag in post.tags.all %}
+							<div id="tags" class="cate">
+								<span class="blue"><a href="#">{{ tag }}</a></span>
+							</div> 
+							{% endfor %}
+						</div>
+						{% endif %}
+					</div>
+					<!-- comment items -->
+					<div class="comments">
+						<h4>04 Comments</h4>
+						<div class="cmt-item flex-it">
+							<img src="images/uploads/author.png" alt="">
+							<div class="author-infor">
+								<div class="flex-it2">
+									<h6><a href="#">Steve Perry</a></h6> <span class="time"> - 27 Mar 2017</span>
+								</div>
+								<p>Even though Journey's classic vocalist Steve Perry didn’t reunite with the band during their Rock Hall performance (to the dismay of hopeful fans), he did offer up a touching speech.</p>
+								<p><a class="rep-btn" href="#">+ Reply</a></p>
+							</div>
+						</div>
+						<div class="cmt-item flex-it reply">
+							<img src="images/uploads/author2.png" alt="">
+							<div class="author-infor">
+								<div class="flex-it2">
+									<h6><a href="#">Joss Whedon</a></h6> <span class="time"> - 27 Mar 2017</span>
+								</div>
+								<p>Prince died not long after the 2016 Rock Hall ceremony, so this year's edition featured Lenny Kravitz and a full gospel choir performing a swamp-funk take on When Doves Cry.</p>
+							</div>
+						</div>
+						<div class="cmt-item flex-it">
+							<img src="images/uploads/author4.png" alt="">
+							<div class="author-infor">
+								<div class="flex-it2">
+									<h6><a href="#">Margot Robbie</a></h6> <span class="time"> - 27 Mar 2017</span>
+								</div>
+								<p>Joan Baez was the sharpest of the Rock Hall inductees, singing about deportees and talking social activism as well as joking about her age and the likelihood that a good portion of the Barclays. </p>
+								<p><a class="rep-btn" href="#">+ Reply</a></p>
+							</div>
+						</div>
+					</div>
+					<div class="comment-form">
+						<h4>Leave a comment</h4>
+						<form action="">
+							<div class="row">
+								<div class="col-md-4">
+									<input type="text" placeholder="Your name">
+								</div>
+								<div class="col-md-4">
+									<input type="text" placeholder="Your email">
+								</div>
+								<div class="col-md-4">
+									<input type="text" placeholder="Website">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<textarea name="message" id="" placeholder="Message"></textarea>
+								</div>
+							</div>
+							<input class="submit" type="submit" placeholder="submit">
+						</form>
+					</div>
+					<!-- comment form -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end of  blog detail section-->
+{% endblock content %}

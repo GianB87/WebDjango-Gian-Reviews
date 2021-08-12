@@ -1,0 +1,68 @@
+{% extends "main.html" %}
+{% block content %}
+
+<div class="hero user-hero">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="hero-ct">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="page-single">
+	<div class="container">
+		<div class="row ipad-width">
+            <!-- left side -->
+			<div class="col-md-3 col-sm-12 col-xs-12">
+				<div class="user-information">
+					<div class="user-img">
+						<a href="#"><img src="/static/images/uploads/user-img.png" alt=""><br></a>
+						<a href="#" class="redbtn">Change avatar</a>
+					</div>
+					<div class="user-fav">
+						<p>Options</p>
+						<ul>
+							<li><a href="{% url 'create-book' %}">Add Book</a></li>
+							<li class="active"><a href="#">Add Post</a></li>
+							<li><a href="userrate.html">Add Work</a></li>
+						</ul>
+					</div>
+					<div class="user-fav">
+						<p>Others</p>
+						<ul>
+							<li><a href="#">Change password</a></li>
+							<li><a href="#">Log out</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+            <!-- right side -->
+			<div class="col-md-9 col-sm-12 col-xs-12">
+				<div class="form-style-1 user-pro" action="">
+					<form action="" class="user" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+						<h4>Add/Edit Post</h4>
+                        {{form.media}}
+                        {% for field in form %}
+                        <div class="row">
+                            <div class="col-md-12 form-it">
+                                <label>{{ field.label }}</label>
+                                <br>
+                                {{field}}                       
+                            </div>
+                        </div>
+                        {% endfor %}
+						<div class="row">
+                            <div class="col-md-2">
+								<input class="submit" type="submit" value="Submit">
+							</div>
+						</div>	
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}

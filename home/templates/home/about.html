@@ -1,0 +1,206 @@
+{% extends "main.html" %}
+{% block content %}
+<div class="hero hero3">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<!-- <h1> movie listing - list</h1>
+				<ul class="breadcumb">
+					<li class="active"><a href="#">Home</a></li>
+					<li> <span class="ion-ios-arrow-right"></span> movie listing</li>
+				</ul> -->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- celebrity single section-->
+
+<div class="page-single movie-single cebleb-single">
+	<div class="container">
+		<div class="row ipad-width">
+			<!-- my photo: Probably quit -->
+			<!-- <div class="col-md-4 col-sm-12 col-xs-12">
+				<div class="mv-ceb">
+					<img src="/static/images/uploads/cebsingle2.png" alt="">
+				</div>
+			</div> -->
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<div class="movie-single-ct">
+					<h1 class="bd-hd">Gian Baltazar</h1>
+					<p class="ceb-single">Student  |  Developer</p>
+					<div class="social-link cebsingle-socail">
+						<a href="#"><i class="ion-social-youtube"><span class="about-text"> Youtube</span></i></a>
+						<a href="https://github.com/Johaan87"><i class="ion-social-github"><span class="about-text"> Github</span></i></a> 
+						<a href="https://www.linkedin.com/in/gian-baltazar-449aa7170/"><i class="ion-social-linkedin"><span class="about-text"> Linkedin</span></i></a> 
+						<!-- <a href="" class="gr gr-icon">
+							<i style="position: relative;"><i src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.2.0/goodreads.svg" class="gr gr-icon gr-s"></i> &nbsp;&nbsp;&nbsp; <span class="about-text">goodreads</span> </i>
+						</a> -->
+					</div>
+					<div class="movie-tabs">
+						<div class="tabs">
+							<ul class="tab-links tabs-mv">
+								<li class="active"><a href="#overviewceb">Overview</a></li>
+								<li><a href="#biography"> biography</a></li>
+								<li><a href="#mediaceb"> Media</a></li> 
+								<li><a href="#filmography">Recommended Reading</a></li>                        
+							</ul>
+						    <div class="tab-content">
+						        <div id="overviewceb" class="tab active">
+						            <div class="row">
+						            	<div class="col-md-8 col-sm-12 col-xs-12">
+											<div class="editor" id="post"'>
+												<p>bla bla overview</p> 
+												<!-- {{post.description|safe}} -->
+											</div>
+						            		
+											<p class="time"><a href="#">See full bio <i class="ion-ios-arrow-right"></i></a></p>
+											<div class="title-hd-sm">
+												<h4>Recent Works</h4>
+												<a href="#" class="time">All Works<i class="ion-ios-arrow-right"></i></a>
+											</div>
+											<!-- display works -->
+											<div class="mvcast-item">											
+												<div class="cast-it">
+													<div class="cast-left cebleb-film">
+														<img src="/static/images/uploads/film1.jpg" alt="">
+														<div>
+															<a href="#">X-Men: Apocalypse </a>
+															<p class="time">Logan</p>
+														</div>
+														
+													</div>
+													<p>...  2016</p>
+												</div>
+											</div>
+											<div class="title-hd-sm">
+												<h4>Recent Posts</h4>
+												<a href="#" class="time">All Posts<i class="ion-ios-arrow-right"></i></a>
+											</div>
+											<!-- display posts -->
+											<div class="mvcast-item">											
+												<div class="cast-it">
+													<div class="cast-left cebleb-film">
+														<img src="/static/images/uploads/film1.jpg" alt="">
+														<div>
+															<a href="#">Post 1 </a>
+															<p class="time">Tags</p>
+														</div>
+														
+													</div>
+													<p>Date of Creation</p>
+												</div>
+											</div>
+						            	</div>
+						            	<div class="col-md-4 col-xs-12 col-sm-12">
+						            		<div class="sb-it">
+						            			<h6>Fullname:  </h6>
+						            			<p><a href="#">Gian Franco Baltazar Mamani</a></p>
+						            		</div>
+						            		<div class="sb-it">
+						            			<h6>Date of Birth: </h6>
+						            			<p>November 24, 1999</p>
+						            		</div>
+						            		<div class="sb-it">
+						            			<h6>Country:  </h6>
+						            			<p>Chile</p>
+						            		</div>
+						            		<div class="sb-it">
+						            			<h6>Expertise:</h6>
+						            			<p class="tags">
+						            				<span class="time"><a href="#">jackman</a></span>
+						            			</p>
+						            		</div>
+						            		<div class="ads">
+												<img src="/static/images/uploads/ads1.png" alt="">
+											</div>
+						            	</div>
+						            </div>
+						        </div>
+						        <div id="biography" class="tab">
+						           <div class="row">
+									<div class="editor" id="post"'>
+										<!-- {{book.summary|safe}} -->
+										<p>My bio bla bla bla</p>
+									</div>
+						            </div>
+						        </div>
+						        <div id="mediaceb" class="tab">
+						        	<div class="row">
+						            	<div class="title-hd-sm">
+											<h4>Latest Youtube Videos</h4>
+											<!-- <a href="#" class="time">Youtube<i class="ion-ios-arrow-right"></i></a> -->
+										</div>
+										<div class="mvsingle-item media-item">
+											<div class="vd-item">
+												<div class="vd-it">
+													<img class="vd-img" src="images/uploads/vd-item1.jpg" alt="">
+													<a class="fancybox-media hvr-grow"  href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
+												</div>
+												<div class="vd-infor">
+													<h6> <a href="#">Trailer:  Watch New Scenes</a></h6>
+													<p class="time"> 1: 31</p>
+												</div>
+											</div>
+										</div>
+										<div class="title-hd-sm">
+											<h4>Latest Book Reviews Videos</h4>
+										</div>
+										<div class="mvsingle-item">
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="/static/images/uploads/image11.jpg" ><img src="/static/images/uploads/image1.jpg" alt=""></a>
+										</div>
+						        	</div>
+					       	 	</div>
+								<!-- probably it must be a new item of navbar -->
+					       	 	<div id="filmography" class="tab">
+						        	<div class="row">
+
+						            	<div class="topbar-filter">
+											<p>Found <span>14 movies</span> in total</p>
+											<label>Filter by Tag:</label>
+											<select>
+												<option value="popularity">General</option>
+												<option value="date">Tech/AI</option>
+												<option value="date">History</option>
+												<option value="rating">Auto/Biography</option>
+												<option value="popularity">Literature</option>
+												<option value="rating">Science</option>
+												<option value="rating">Philosophy</option>
+											</select>
+										</div>
+										<!-- movie cast -->
+										<div class="mvcast-item">											
+											<div class="cast-it">
+												<div class="cast-left cebleb-film">
+													<img src="images/uploads/film1.jpg" alt="">
+													<div>
+														<a href="#">X-Men: Apocalypse </a>
+														<p class="time">Logan</p>
+													</div>
+													
+												</div>
+												<p>...  2016</p>
+											</div>
+											<div class="cast-it">
+												<div class="cast-left cebleb-film">
+													<img src="images/uploads/film2.jpg" alt="">
+													<div>
+														<a href="#">Eddie the Eagle </a>
+														<p class="time">Bronson Peary</p>
+													</div>
+												</div>
+												<p>...  2015</p>
+											</div>
+										</div>
+						            </div>
+					       	 	</div>
+						    </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+<!-- celebrity single section-->
+{% endblock content %}

@@ -1,0 +1,177 @@
+{% extends "main.html" %}
+
+{% block content %}
+<div class="hero mv-single-hero">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+			</div>
+		</div>
+	</div>
+</div>
+<div class="page-single movie-single movie_single">
+	<div class="container">
+		<div class="row ipad-width2">
+			<!-- parte izquierda -->
+			<div class="col-md-3 col-sm-12 col-xs-12">
+				<div class="movie-img sticky-sb">
+					<img src="{{book.image_link}}" alt="">
+					<div class="movie-btn">	
+						{% if book.youtube_link %}
+						<div class="btn-transform transform-vertical red">
+							<div><a href="#" class="item item-1 redbtn"> <i class="ion-play"></i>Youtube Video</a></div>
+							<div><a href="{{book.youtube_link}}" class="item item-2 redbtn fancybox-media hvr-grow"><i class="ion-play"></i></a></div>
+						</div>						  
+						{% endif %}
+						<div class="btn-transform transform-vertical">
+							<div><a href="#" class="item item-1 yellowbtn"> <i class="ion-card"></i> Buy ticket</a></div>
+							<div><a href="#" class="item item-2 yellowbtn"><i class="ion-card"></i></a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- parte derecha -->
+			<div class="col-md-9 col-sm-12 col-xs-12">
+				<div class="movie-single-ct main-content">
+					<h1 class="bd-hd">{{book.title}} 
+                        <span>{{ book.authors }} </span>      
+                    </h1>
+					<div class="social-btn">
+						<a href="#" class="parent-btn"><i class="ion-heart"></i> Add to Favorite</a>
+						<div class="hover-bnt">
+							<a href="#" class="parent-btn"><i class="ion-android-share-alt"></i>share</a>
+							<div class="hvr-item">
+								<a href="#" class="hvr-grow"><i class="ion-social-facebook"></i></a>
+								<a href="#" class="hvr-grow"><i class="ion-social-twitter"></i></a>
+								<a href="#" class="hvr-grow"><i class="ion-social-googleplus"></i></a>
+								<a href="#" class="hvr-grow"><i class="ion-social-youtube"></i></a>
+							</div>
+						</div>		
+					</div>
+					<div class="movie-rate">
+						<div class="rate">
+							<i class="ion-android-star"></i>
+							<p><span>{{book.rate}}</span> /10 
+							</p>
+						</div>
+						<div class="rate-star">
+							<p>My rate:  </p>
+                            {% for i in max %}
+                            {% if i < book.rate %}
+							<i class="ion-ios-star"></i>
+                            {% else %}
+							<i class="ion-ios-star-outline"></i>
+                            {% endif %}
+                            {% endfor %}
+							<h5 style="color:whitesmoke;">&nbsp;&nbsp;{{ value }} </h5>
+						</div>
+					</div>
+					<div class="movie-tabs">
+						<div class="tabs">
+							<ul class="tab-links tabs-mv">
+								<li class="active"><a href="#overviewceb">Review</a></li>
+								<li><a href="#biography">Summary</a></li>
+								{% if book.youtube_link %}
+								<li><a href="#mediaceb">Video</a></li> 
+								{% endif %}
+								<li><a href="#filmography">Other Reviews</a></li>                        
+							</ul>
+						    <div class="tab-content">
+						        <div id="overviewceb" class="tab active">
+						            <div class="row">
+						            	<div class="col-md-8 col-sm-12 col-xs-12">
+											<div class="editor" id="post"'>
+
+												{{book.review|safe}}
+											</div>
+						            	</div>
+						            	<div class="col-md-4 col-xs-12 col-sm-12">
+						            		<div class="sb-it">
+						            			<h6>Created by: </h6>
+						            			<p><a href="#">Gian Baltazar</a></p>
+						            		</div>
+						            		<div class="sb-it">
+						            			<h6>Date of creation: </h6>
+						            			<p>{{book.review_date}}</p>
+											
+						            		</div>
+						            		<div class="sb-it">
+						            			<h6>Country:  </h6>
+						            			<p>Chile</p>
+						            		</div>
+						            		<div class="sb-it">
+						            			<h6>Keywords:</h6>
+						            			<p class="tags">
+						            				<span class="time"><a href="#">jackman</a></span>
+						            			</p>
+						            		</div>
+                                            <!-- optional -->
+						            		<div class="ads">
+												<img src="/static/images/uploads/ads1.png" alt="">
+											</div>
+						            	</div>
+						            </div>
+						        </div>
+						        <div id="biography" class="tab">
+						           <div class="row">
+						            	<div class="rv-hd">
+											<div>
+												<h3>Created By</h3>
+						       	 				<h2>Gian Baltazar</h2>
+											</div>							            						
+						            	</div>
+						            </div>
+									<div class="row">
+										<div class="col-md-12 col-sm-12 col-xs-12">
+											<div class="editor" id="post"'>
+												{{book.summary|safe}}
+											</div>
+						            	</div>
+									</div>
+						        </div>
+								{% if book.youtube_link %}
+						        <div id="mediaceb" class="tab">
+									<!-- video -->
+					       	 	</div>					  
+								{% endif %}
+					       	 	<div id="filmography" class="tab">
+						        	<div class="row">
+						            	<div class="topbar-filter">
+											<p>Found <span>14 movies</span> in total</p>
+											<label>Filter by:</label>
+											<select>
+												<option value="popularity">Popularity Descending</option>
+												<option value="popularity">Popularity Ascending</option>
+												<option value="rating">Rating Descending</option>
+												<option value="rating">Rating Ascending</option>
+												<option value="date">Release date Descending</option>
+												<option value="date">Release date Ascending</option>
+											</select>
+										</div>
+										<!-- movie cast -->
+										<div class="mvcast-item">											
+											<div class="cast-it">
+												<div class="cast-left cebleb-film">
+													<img src="/static/images/uploads/film1.jpg" alt="">
+													<div>
+														<a href="#">X-Men: Apocalypse </a>
+														<p class="time">Logan</p>
+													</div>
+													
+												</div>
+												<p>...  2016</p>
+											</div>
+										</div>
+						            </div>
+					       	 	</div>
+						    </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}
+
+

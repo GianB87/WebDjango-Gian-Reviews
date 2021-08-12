@@ -1,0 +1,104 @@
+{% extends "main.html" %}
+{% load tags %}
+{% block content %}
+<div class="hero common-hero">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="hero-ct">
+					<h1>Enjoy the journey</h1>
+					<ul class="breadcumb">
+						<li class="active"><a href="{% url 'home' %}">Home</a></li>
+						<li> <span class="ion-ios-arrow-right"></span>Books</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="page-single">
+	<div class="container">
+		<div class="row ipad-width">
+			<div class="col-md-8 col-sm-12 col-xs-12">
+				<div class="topbar-filter">
+					{% include 'pagination.html' with queryset=books custom_range=custom_range search_order=search_order search_query=search_query search_rate=search_rate ratings=ratings %}
+				</div> 
+				<div class="flex-wrap-movielist">
+                    {% for book in books %}
+                    <div class="movie-item-style-2 movie-item-style-1">
+                        <img src="{{ book.image_link }}" alt="">
+                        <div class="hvr-inner">
+                            <a href="{% url 'book' book.id %}">Read Review <i class="ion-android-arrow-dropright"></i> </a>
+                        </div>
+                        <div class="mv-item-infor">
+                            <h6><a href="{% url 'book' book.id %}">{{ book.title }}</a></h6>
+                            <a href="{% url 'book' book.id %}"><p>{{ book.authors }}</p></a>
+                            <p class="rate"><i class="ion-android-star"></i><span>{{ book.rate }}</span> /10 <br>
+                                <div class="cate">
+                                    <span class="{{book.rate|qual}}"><a href="{% url 'book' book.id %}">{{ ratings|get_item:book.rate }}</a></span>
+                                </div>                           
+                        </div>
+                    </div>					
+                    {% endfor %}	
+				</div>		
+				<div class="topbar-filter">					
+					{% include 'pagination.html' with queryset=books custom_range=custom_range search_order=search_order search_query=search_query search_rate=search_rate ratings=ratings %}
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-12 col-xs-12">
+				<div class="sidebar">
+					<div class="searh-form">
+						<h4 class="sb-title">Search for book</h4>
+						<form id="searchForm2" class="form-style-1" action="" method="GET">
+							{% csrf_token %}
+							<input value="{{search_order}}" name="search_order" hidden>
+							<!-- <select style="display: none;" name="search_order" onChange="form.submit();">
+								<option  selected value="{{search_order|order_title}}"></option>
+							</select> -->
+							<div class="row">
+								<div class="col-md-12 form-it">
+									<label>Book / Author</label>
+									<input type="text" placeholder="Enter keywords" value="{{search_query}}" name="search_query">
+								</div>
+								<div class="col-md-12 form-it">
+									<label>Rating</label>
+									<select name='search_rate'>
+										<option value="">Select a rating</option>	
+										{% for key, value in ratings.items %}
+										{% if key == search_rate|to_int %}	<option value="{{key}}" selected="selected">{{value}} - {{key}}</option>									
+										{% else %}
+										<option value="{{key}}">{{value}} - {{key}}</option>										  
+										{% endif %}										  
+										{% endfor %}
+									</select>
+								</div>
+								<div class="col-md-12 ">
+									<input class="submit" type="submit" value="submit">
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="ads">
+						<img src="/static/images/uploads/ads1.png" alt="">
+					</div>
+					<div class="sb-facebook sb-it">
+						<h4 class="sb-title">Find us on Facebook</h4>
+						<iframe src="" data-src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fhaintheme%2F%3Ffref%3Dts&tabs=timeline&width=340&height=315px&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=true&appId"  height="315" style="width:100%;border:none;overflow:hidden" ></iframe>
+					</div>
+					<div class="sb-twitter sb-it">
+						<h4 class="sb-title">Tweet to us</h4>
+						<div class="slick-tw">
+							<div class="tweet item" id="599202861751410688">
+							</div>
+							<div class="tweet item" id="297462728598122498">
+							</div>
+						</div>					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% endblock content %}
