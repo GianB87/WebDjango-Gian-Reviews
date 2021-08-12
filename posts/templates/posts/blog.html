@@ -43,10 +43,14 @@
 				{% include "pagination-v2.html" with queryset=posts custom_range=custom_range %}
 			</div>
 			<div class="col-md-3 col-sm-12 col-xs-12">
+
 				<div class="sidebar">
 					<div class="sb-search sb-it">
-						<h4 class="sb-title">Search</h4>
-						<input type="text" placeholder="Enter keywords">
+						<h4 class="sb-title">Search Title / Tag</h4>
+						<form id="searchForm2" action="" method="GET">
+							{% csrf_token %}
+							<input class="search-bar" type="text" placeholder="Press Enter to Search" value="{{search_query}}" name="search_query">  
+						</form>
 					</div>
 					<div class="sb-cate sb-it">
 						<h4 class="sb-title">Categories</h4>

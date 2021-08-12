@@ -9,7 +9,7 @@
     letter-spacing: 0.05rem;
     line-height: 2em !important;
     text-indent: 6rem;
-
+    overflow-wrap: break-word;
 }
 /* #post p {
     text-transform:capitalize;
@@ -93,7 +93,17 @@ li::marker {
     border-radius: 0.1rem;
 }
 
-
+    div a img.book-grid { 
+        width: 100%;
+        height: 26rem;
+        border: 0.3rem solid #405266;
+    }
+@media (max-width: 767px) {
+    .movie-item-style-2 .mv-item-infor {
+        max-width: 180px;
+        margin: 0;
+    }
+}
 
 #tags {
     display: flex;
@@ -107,3 +117,31 @@ li::marker {
 #tags span a {
     color: white;
 }
+.sidebar .sb-it form input.search-bar, div.row div.form-it .search-bar {
+    border-radius: 5rem !important;
+    border: 2px solid #405266;
+    transition: all 0.5s linear;
+    letter-spacing: 0.08rem;
+    font-weight: bold;
+    color: white !important;
+    background: url('/static/images/uploads/search-bgsb.png') no-repeat right 15px center;
+    background-size: 16px;
+    background-color: #071829;
+}
+.sidebar .sb-it form input.search-bar:hover, .sidebar .sb-it form input.search-bar:focus,
+div.row div.form-it .search-bar:hover, div.row div.form-it .search-bar:focus {
+    border: 2px solid #dcf836 !important;
+    background-color: #020d18;
+    background-size: 0;
+}
+div.row div.form-it .search-rate {
+    background-image: none;
+
+}
+
+div.row div.blog-it-infor p {
+    color: white !important;
+}
+
+
+

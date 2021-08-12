@@ -5167,7 +5167,7 @@ ul {
   text-transform: none;
   border: none;
   height: 40px;
-  background: url('/static/images/uploads/search-bgsb.png') no-repeat right 20px center;
+
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -6517,7 +6517,7 @@ ul {
 .form-style-1 input.submit:hover {
   font-size:17px;
 
-  background:rgb(255, 216, 216);
+  background:rgb(252, 240, 240);
   color:#dd003f;
 
 }
@@ -7875,7 +7875,7 @@ header {
   -o-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
-@media (max-width: 991px) {
+@media (max-width: 992px) {
   header {
     background-color: #0f2133;
   }
@@ -8393,7 +8393,7 @@ ul#id_tags label {
   outline-style: none;
   padding-left: 30px;
   color: white;
-  background-color: #dd003f;
+  background-color: #1692bb;
   border-radius: 20px;
 }
 input.input[type="checkbox"] {

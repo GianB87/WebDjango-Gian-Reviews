@@ -26,10 +26,12 @@
 				<div class="flex-wrap-movielist">
                     {% for book in books %}
                     <div class="movie-item-style-2 movie-item-style-1">
-                        <img src="{{ book.image_link }}" alt="">
-                        <div class="hvr-inner">
-                            <a href="{% url 'book' book.id %}">Read Review <i class="ion-android-arrow-dropright"></i> </a>
-                        </div>
+						<a href="{% url 'book' book.id %}">
+							<img class="book-grid" src="{{ book.image_link }}" alt="">
+							<div class="hvr-inner" onClick="window.redirect='{{ book.image_link }}'">
+								<a href="{% url 'book' book.id %}">Read Review &nbsp;<i class="ion-android-arrow-dropright"></i> </a>
+							</div>
+						</a>
                         <div class="mv-item-infor">
                             <h6><a href="{% url 'book' book.id %}">{{ book.title }}</a></h6>
                             <a href="{% url 'book' book.id %}"><p>{{ book.authors }}</p></a>
@@ -58,11 +60,11 @@
 							<div class="row">
 								<div class="col-md-12 form-it">
 									<label>Book / Author</label>
-									<input type="text" placeholder="Enter keywords" value="{{search_query}}" name="search_query">
+									<input class="search-bar" type="text" placeholder="Enter keywords" value="{{search_query}}" name="search_query">
 								</div>
 								<div class="col-md-12 form-it">
 									<label>Rating</label>
-									<select name='search_rate'>
+									<select class="search-bar search-rate" name='search_rate'>
 										<option value="">Select a rating</option>	
 										{% for key, value in ratings.items %}
 										{% if key == search_rate|to_int %}	<option value="{{key}}" selected="selected">{{value}} - {{key}}</option>									
