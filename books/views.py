@@ -1,14 +1,14 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 import requests
-
+from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import CreateView
 # import book model
 from .models import Book
 from .forms import BookForm
 from .utils import searchBooks, paginateBooks
 
-
+ 
 values = {0: 'NOT RATED',
         1: 'DO NOT READ',
         2: 'VERY BAD',
@@ -37,7 +37,7 @@ def book(request, pk):
     context = {'book': bookObj, 'max':range(10)}
     return render(request, 'books/book-review.html', context) 
 
-
+@login_required(login_url='home')
 def createBook(request):
     form = BookForm()
  

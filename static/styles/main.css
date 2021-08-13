@@ -143,5 +143,24 @@ div.row div.blog-it-infor p {
     color: white !important;
 }
 
+#loginfail, i.fa-times-circle {
 
+    color: #D8000C;
+    background-color: #FFD2D2;
+    padding: 1rem 2rem;
+    border-radius: 3rem;
 
+}
+.login-content .lg {
+    margin-top: 1rem;
+}
+.logout a {
+    background: #1692bb !important;
+}
+
+header .navbar-default .navbar-nav li.btn a:hover,header .navbar-default .navbar-nav li.btn a:focus {
+    color: #dcf836;
+}
+header .navbar-default .navbar-nav li.btn  {
+margin-left: 1rem;
+}

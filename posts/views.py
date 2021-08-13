@@ -1,7 +1,8 @@
+from django import urls
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 import requests
-
+from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import CreateView
 # import book model
 from .utils import searchPosts, paginatePosts
@@ -25,7 +26,8 @@ def post(request,pk):
     context = {'post': postObj, 
                 'max':range(10)}
     return render(request, 'posts/single-post.html',context)
-
+    
+@login_required(login_url='home')
 def createPost(request):
     profile = request.user.profile
     form = PostForm()
