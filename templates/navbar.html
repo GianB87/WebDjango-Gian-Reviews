@@ -1,4 +1,5 @@
 {% load static %}
+{% load tags %}
 <!-- BEGIN | Header -->
 <header class="ht-header" id="bg1">
 	<div class="container">
@@ -57,12 +58,14 @@
 							</li>
 						  {% else %}
 						  <li class="loginLink"><a href="#">LOG In</a></li>
-						  <li class="btn signupLink"><a href="">sign up</a></li>
+						  <li class="btn signupLink"><a href="#">sign up</a></li>
 						{% endif %}
 					</ul>
 				</div>
-			<!-- /.navbar-collapse -->
-	    </nav>
+				<!-- /.navbar-collapse -->
+			</nav>
+			{% include "messages.html" %}
+
 	    
 	    <!-- top search form -->
 	    <!-- <div class="top-search">
@@ -73,6 +76,8 @@
 			<input type="text" placeholder="Search for a movie, TV Show or celebrity that you are looking for">
 	    </div> -->
 	</div>
+	
 </header>
+
 
 <!-- END | Header -->

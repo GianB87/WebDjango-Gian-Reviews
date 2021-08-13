@@ -32,3 +32,7 @@ import html
 @register.filter()
 def html_decode(s):
     return html.unescape(s)
+
+@register.simple_tag
+def get_bootstrap_alert_msg_css_name(tags):
+    return "danger" if tags == "error" else tags

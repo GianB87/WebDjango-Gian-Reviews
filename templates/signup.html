@@ -1,0 +1,43 @@
+<div class="login-wrapper"  id="signup-content">
+    <div class="login-content">
+        <a href="#" class="close">x</a>
+        <h3>sign up</h3>
+        <form id="registerForm" method="POST">
+            {% csrf_token %}
+            <div class="row">
+                 <label for="username-2">
+                    Username:
+                    <br><i class="form-sub">3 to 20 alphanumeric characters, first character must be alphabetic</i>
+                    <input type="text" name="username" id="username-2" placeholder="HughJackman" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{3,20}$" required="required" />
+                </label>
+            </div>
+           
+            <div class="row">
+                <label for="email-2">
+                    your email:
+                    <input type="email" name="email" id="email-2" pattern="(?!test@test\.com$)[a-z0-9._%+-]{3,}@[a-z]{3,}\.[a-z]{2,}(?:\.[a-z]{2,})?" placeholder="" required="required" />
+                </label>
+            </div>
+             <div class="row">
+                <label for="password-2">
+                    Password: 
+                    <br><i class="form-sub">At least 8 characters with 1 number and 1 special character</i>
+                    
+                    <input type="password" name="password" id="password-2" placeholder="" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n]).*$" required="required" />
+                </label>
+            </div>
+             <div class="row">
+                <label for="repassword-2">
+                    re-type Password:
+                    <input type="password" name="password" id="repassword-2" placeholder=""  required="required" />
+                </label>
+            </div>
+           <div class="row">
+             <button type="submit">sign up</button>
+           </div>
+        </form>
+        <div  class="row lg">
+            <div hidden id="registerfail"></div>
+        </div>
+    </div>
+</div>

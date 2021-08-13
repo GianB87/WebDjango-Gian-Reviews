@@ -6,9 +6,9 @@ from django.conf.urls.static import static
 from django.http import HttpResponse
 from django.contrib.auth import views as auth_views
 import requests
+
 def none_fix(request):
     return render(request,'home/home.html')
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),

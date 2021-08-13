@@ -23,7 +23,7 @@
 			<div class="col-md-12 col-sm-12 col-xs-12">
 				<div class="blog-detail-ct">
 					<h1>{{post.title}}</h1>
-					<span class="time">{{post.created}}</span> <br>
+					<span class="time">{{post.created|date:"jS F Y"}}</span> <br>
 					<img src="{{post.imageURL}}" alt="">
 					<div class="editor" id="post"'>
 						{{post.description|safe}}

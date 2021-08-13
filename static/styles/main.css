@@ -164,3 +164,39 @@ header .navbar-default .navbar-nav li.btn a:hover,header .navbar-default .navbar
 header .navbar-default .navbar-nav li.btn  {
 margin-left: 1rem;
 }
+
+ul li.alert {
+    border-radius: 3rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    border: 0.25rem solid ;
+    padding: 1rem 1rem;
+    /* background: linear-gradient(
+    to right, 
+    inherit 0%,
+    inherit 50%,
+    inherit 100%) */
+
+}
+ul#pop-up, ul li#popup {
+    opacity: 1;
+    transition: all 0.6s ease-in;
+    word-wrap: break-word;
+
+}
+ul#pop-up{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0rem;
+}
+header .container, header .container::before {
+    position: relative;
+}
+
+i.form-sub {
+    font-size: 1.1rem;
+
+    opacity: 0.6;
+}

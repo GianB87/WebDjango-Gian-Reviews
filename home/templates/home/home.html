@@ -40,7 +40,7 @@
 								</div>
 								<div class="mv-details">
 									<p><i class="ion-android-star"></i><span>{{book.rate}}</span> /10 <span>
-											&nbsp;&nbsp; Date of Review: {{book.review_date}}</span></p>
+											&nbsp;&nbsp; Date of Review: {{book.review_date|date:"jS F Y"}}</span></p>
 								</div>
 								<div class="btn-transform transform-vertical">
 									<div><a href="{% url 'book' book.id %}" class="item item-1 redbtn">more detail</a>
@@ -79,15 +79,17 @@
 									{% for book in newest %}
 									<div class="slide-it">
 										<div class="movie-item">
+											<a href="{% url 'book' book.id %}">
 											<div class="mv-img">
-												<img src="{{book.image_link}}" alt="" width="185" height="284">
+												<img src="{{book.image_link}}" alt="{{book.image_link}}"  width="185" height="284">
 											</div>
+										</a>
 											<div class="hvr-inner">
-												<a href="{% url 'book' book.id %}}"> Read more <i
+												<a href="{% url 'book' book.id %}"> Read more <i
 														class="ion-android-arrow-dropright"></i> </a>
 											</div>
 											<div class="title-in">
-												<h6><a href="{% url 'book' book.id %}}">{{ book.title }}</a></h6>
+												<h6><a href="{% url 'book' book.id %}">{{ book.title }}</a></h6>
 												<p><i class="ion-android-star"></i><span>{{book.rate}}</span> /10</p>
 											</div>
 										</div>

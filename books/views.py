@@ -40,11 +40,13 @@ def book(request, pk):
 @login_required(login_url='home')
 def createBook(request):
     form = BookForm()
- 
     if request.method == 'POST':
         form = BookForm(request.POST)
         if form.is_valid():
             book = form.save(commit=False)
+            
+            # ^ add a case when this fail
+
 
             book_data = requests.get('https://www.googleapis.com/books/v1/volumes?q=isbn:' + str(book.isbn)).json()
             book.title = book_data['items'][0]['volumeInfo']['title']
